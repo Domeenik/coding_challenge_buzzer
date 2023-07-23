@@ -6,6 +6,7 @@ So kann ich die Periodendauer von der Noten-Frequenz berechnen und den Pin so la
 Dies wird so lange ausgeführt, bis ein zweiter Timer (TIM2), welcher die gewünschte Dauer in Millisekunden hochzählt über den Compare-Wert läuft.
 Ich habe des Weiteren angenommen, dass dem Buzzer die Spannung in eine Richtung reicht um einen Ton zu generieren.
 Ansonsten könnte die H-Brücke des Treibers verwendet werden um die Stromflussrichtung umzukehren und nicht nur den Stromfluss zu deaktivieren.
+Des Weiteren gehe ich davon aus, dass die Polarität des Buzzers irrelevant ist.
 
 Der Ansatz den ich gewählt habe ist wahrscheinlich nicht der effektivste.
 Es wäre sinnvoller einen Timer so zu konfigurieren, dass ein PWM-Signal generiert wird und die Frequenz von diesem variiert wird.

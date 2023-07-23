@@ -70,6 +70,12 @@ void delay_us(uint16_t us){
 }
 
 void set_buzzer_state(uint8_t active) {
+  // as far as i understood the schematics correct PA3 should be turned off all the time
+  // the buzzer will in this case just use one direction of current flow
+  // i assume that the polarity of the buzzer is irrelevant
+  GPIOG->BSRR = GPIO_BSRR_BR10;
+  // since i want to controll the buzzer just with the pwm the BUZZ_LOGIC_OUT should be low
+  GPIOE->BSRR = GPIO_BSRR_BS1;
   if (active) {
     //pin high -> active
     GPIOC->BSRR = GPIO_BSRR_BS14;
@@ -91,6 +97,7 @@ void play_frequency(float frequency, uint16_t duration_ms){
   while (__HAL_TIM_GET_COUNTER(&htim2) < (duration_ms)){
     // high
     GPIOA->BSRR = GPIO_BSRR_BS3;
+    GPIOA->BSRR = GPIO_BSRR_BS3;
     delay_us(period_us);
     // low
     GPIOA->BSRR = GPIO_BSRR_BR3;
@@ -100,7 +107,7 @@ void play_frequency(float frequency, uint16_t duration_ms){
 
 void play_test_tone() {
   // play the testing frequency for 1000ms
-  play_frequency(800.00, 1000);
+  play_frequency(880.00, 1000);
 }
 
 /* USER CODE END 0 */
