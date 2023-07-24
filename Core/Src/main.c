@@ -97,7 +97,6 @@ void play_frequency(float frequency, uint16_t duration_ms){
   while (__HAL_TIM_GET_COUNTER(&htim2) < (duration_ms)){
     // high
     GPIOA->BSRR = GPIO_BSRR_BS3;
-    GPIOA->BSRR = GPIO_BSRR_BS3;
     delay_us(period_us);
     // low
     GPIOA->BSRR = GPIO_BSRR_BR3;
