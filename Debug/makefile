@@ -60,8 +60,8 @@ all: main-build
 main-build: Code_challenge_buzzer.elf secondary-outputs
 
 # Tool invocations
-Code_challenge_buzzer.elf Code_challenge_buzzer.map: $(OBJS) $(USER_OBJS) C:\Users\Dominik\ Reifer\Documents\projects\stm\Code_challenge_buzzer\STM32L4R9ZIJX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Code_challenge_buzzer.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Dominik Reifer\Documents\projects\stm\Code_challenge_buzzer\STM32L4R9ZIJX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Code_challenge_buzzer.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Code_challenge_buzzer.elf Code_challenge_buzzer.map: $(OBJS) $(USER_OBJS) C:\Users\Domin\Documents\Projekte\coding_challenge_buzzer\STM32L4R9ZIJX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Code_challenge_buzzer.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Domin\Documents\Projekte\coding_challenge_buzzer\STM32L4R9ZIJX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Code_challenge_buzzer.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

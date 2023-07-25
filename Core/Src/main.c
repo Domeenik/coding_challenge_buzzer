@@ -151,7 +151,11 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+    if ((GPIOC->IDR & GPIO_IDR_ID5) == 0) {
+      play_frequency(C6, 500);
+      play_frequency(D6, 500);
+      play_frequency(E6, 500);
+    }
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
